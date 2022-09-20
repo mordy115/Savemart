@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="product-details">
+    <div class="images-product">
+       <img [src]="[product[0].img1]" alt="">
+       <img [src]="[product[0].img2]" alt="">
+    </div>
+    <div class="text-product">
+      <h4>Name :{{product[0].name}}</h4>
+      <p>Title :{{product[0].title}}</p>
+      <p>The Price :${{product[0].price}}</p>
+      <button class="btn btn-primary" (click)="getprodect(product[0].id)" >Add cart</button>
+    </div>
+
+  </div>
+</div>
+
+

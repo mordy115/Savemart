@@ -1,0 +1,136 @@
+.new-arrivals{
+  position: relative;
+}
+.new-arrivals::before{
+  content: '';
+  width: 1px;
+  height: 85%;
+  position: absolute;
+  top: 10%;
+  left: -4%;
+  background-color: black;
+  opacity: .4;
+}
+.new-arrivals::after{
+  content: '';
+  width: 1px;
+  height: 85%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  background-color: black;
+  opacity: .4;
+}
+
+.header-new-arrivals{
+  display: flex;
+  justify-content: space-between;
+}
+.header-new-arrivals hr{
+  color: rgb(122, 124, 124);
+  width: 50%;
+}
+.button-new-arrivals{
+  margin-left: 40px !important;
+}
+.button-new-arrivals .prev-icon{
+  margin-right: 50px !important;
+}
+.button-new-arrivals .next-icon{
+  margin-left: 30px !important;
+}
+
+.button-new-arrivals .carousel-control-next-icon ,
+ .button-new-arrivals .carousel-control-prev-icon{
+  background-color:rgb(122, 124, 124) ;
+}
+
+.product{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-bottom-color: rgb(123, 121, 121);
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 20px;
+  padding-bottom: 20px;
+}
+.buttons{
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translate(-20%,-50%) ;
+
+  margin-left: 59px !important;
+  transition: all .7s ease-in-out;
+  width: 100%;
+}
+.product:hover .buttons{
+  bottom: 0%;
+}
+.product .product-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.product .product-image img{
+  margin: 0px 20px;
+  height: 150px;
+  width: 150px;
+}
+
+.image-secondary {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  transform: translateX(-150%);
+  transition: all 0.7s linear;
+}
+.product:hover .image-cover {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  transform: translateX(-150%);
+  transition: all 0.7s linear;
+}
+.product:hover .image-secondary {
+  position: relative;
+  top: 0;
+  left: 0;
+  filter: alpha(opacity=1);
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 0.7s linear
+}
+.buttons a {
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #eee;
+  color: rgb(128, 124, 124);
+  margin-left: 5px;
+}
+.buttons a:hover {
+  background-color: rgb(144, 144, 241);
+  color: #eee;
+}
+.button-new-arrivals .disabled {
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+@media (max-width:777px) {
+  .new-arrivals::before , .new-arrivals::after{
+    display: none !important;
+  }
+
+}

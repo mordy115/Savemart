@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row" *ngIf="product.length > 0 ;">
+     <div class="col-lg-4" *ngFor="let product of product" >
+      <div class="product">
+        <div class="product-image col-w40">
+          <a [routerLink]="['/product/'+product.id]">
+            <img class=" img-fluid image-cover" [src]="[product.img1]" alt="">
+            <img class="img-fluid image-secondary" [src]="[product.img2]" alt="">
+          </a>
+        </div>
+        <div class="col-w60 text-center">
+          <p>{{product.name}}</p>
+          <p>{{product.title}}</p>
+          <p>${{product.price}}</p>
+        </div>
+        <div class="buttons">
+          <a routerLink="/" (click)="getprodect(product.id)"><i class="fas fa-cart-plus"></i></a>
+          <a routerLink="/"><i class="far fa-heart"></i></a>
+        </div>
+      </div>
+     </div>
+  </div>
+  <div class="text-center p-3" *ngIf="product.length === 0 ;">
+    not found search product
+  </div>
+</div>

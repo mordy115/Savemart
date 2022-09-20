@@ -1,0 +1,38 @@
+<div class="new-arrivals">
+  <div class="row">
+    <div class="header-new-arrivals col-12">
+      <h4>NEW ARRIVALS</h4>
+      <hr>
+      <div class="button-new-arrivals">
+        <button class="carousel-control-next prev-icon" type="button" id="back" (click)="back()"  >
+          <span class="carousel-control-prev-icon" ></span>
+        </button>
+        <button class="carousel-control-next next-icon" type="button"  id="next" (click)="next()"   >
+          <span class="carousel-control-next-icon" ></span>
+        </button>
+      </div>
+    </div>
+    <div  class="col-lg-6 "*ngFor="let product of prodects_new_arrivals_three">
+      <div class="product">
+        <div class="product-image col-w40">
+          <a [routerLink]="['/product/'+product.id]">
+            <img class=" img-fluid image-cover" [src]="[product.img1]" alt="">
+            <img class="img-fluid image-secondary" [src]="[product.img2]" alt="">
+          </a>
+        </div>
+        <div class="col-w60 text-center">
+          <p>{{product.name}}</p>
+          <p>{{product.title}}</p>
+          <p>${{product.price}}</p>
+        </div>
+        <div class="buttons">
+          <a routerLink="/" (click)="getprodect(product.id)"><i class="fas fa-cart-plus"></i></a>
+          <a routerLink="/"><i class="far fa-heart"></i></a>
+          <a (click)="search(product.name)"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

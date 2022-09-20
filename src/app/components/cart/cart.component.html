@@ -1,0 +1,36 @@
+<div class="container cart-page">
+  <div *ngIf="dataCart!== null" >
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="prodect-order" *ngFor="let product of dataCart" >
+          <img [src]="[product.img1]" [alt]="[product.name]">
+           <div>
+            <h5>{{product.name}}</h5>
+            <p>{{product.title}}</p>
+           </div>
+           <input type="number" style="width: 10%;"  [(ngModel)]="product.quantity" (change)="total()">
+           <p>Total:{{product.price * product.quantity}}$</p>
+           <button (click)="delete(product.id)"><i class="fas fa-trash-alt"></i></button>
+        </div>
+        <a class="btn continue-shopping" [routerLink]="['/']">Continue shopping</a>
+      </div>
+      <div class="col-lg-3 ">
+        <div class="data-ordered">
+          <p>There are {{order_number}} items in your cart</p>
+          <ul>
+            <li>Total products: ${{Total_price}}</li>
+             <li>Total Shipping: Free</li>
+             <li>Total: ${{Total_price }} (tax incl.)</li>
+          </ul>
+          <a class="btn checkout" [routerLink]="['/cart']" (click)="confirmorder()">Checkout</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div *ngIf="dataCart=== null" >
+    <div> No Order</div >
+  </div>
+
+</div>
+

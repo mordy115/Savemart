@@ -1,0 +1,20 @@
+.product-details{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.images-product {
+  margin: 10px;
+}
+.text-product{
+  margin-top: 50px;
+}
+.images-product img:first-child{
+  height: 300px;
+  width: 300px;
+}
+.images-product img{
+  height: 200px;
+  width: 200px;
+  display: block;
+}

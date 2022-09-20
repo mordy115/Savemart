@@ -1,0 +1,392 @@
+<header id="header_app">
+   <div class="header-one">
+    <div class="container">
+      <div class="row">
+         <div class="col-lg-6 header-one-left">
+            <i class="icon-email"></i>
+            <p>Email : </p>
+            <p>
+               support@gmail.com
+            </p>
+            <div class="Deals">
+              <i class="icon-deal"></i>
+              <p>Today Deals </p>
+            </div>
+         </div>
+         <div class="col-lg-6 header-one-right">
+          <div class="register-login">
+            <i class="fas fa-user"></i>
+            <a class="register" [routerLink]="['/register']" data-link-action="display-register-form">
+              Register
+            </a>
+            <span class="or-text">or</span>
+            <a class="login ml-2" [routerLink]="['/login']"  rel="nofollow" >Sign in</a>
+          </div>
+          <select class="dropdown" name="currency">
+            <option value="GBP" >£ GBP</option>
+            <option value="USD" selected >USD</option>
+          </select>
+          <select class="dropdown" name="language">
+            <option value="English" selected>English</option>
+            <option value="Français" >Français</option>
+            <option value="Español" >Español</option>
+            <option value="Italiano" >Italiano</option>
+            <option value="Polski" >Polski</option>
+            <option value="اللغة العربية" >اللغة العربية</option>
+          </select>
+
+        </div>
+      </div>
+    </div>
+   </div>
+   <div class="header-two">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 header-two-left">
+            <a [routerLink]="['/']">
+              <img class="logo img-fluid" src="../assets/img/logo-1.png" alt="">
+            </a>
+        </div>
+        <div class="col-lg-6 header-two-right">
+          <div class="title-icon"><i class="icon-support icon-address"></i></div>
+          <div class="icon-content">
+            <div class="icon-content-text">Appelez le service client:</div>
+            <div  class="icon-content-number">1234 567 899</div>
+          </div>
+          <div class="new-account "><a class="nav-link" [routerLink]="['/']"><i class="far fa-user"></i></a></div>
+          <div class="new-favorite"><a class="nav-link" [routerLink]="['/']"><i class="far fa-heart"></i></a></div>
+          <div class="cart" >
+            <a class="nav-link cart"  [routerLink]="['/cart']"><i class="zmdi zmdi-shopping-cart"></i></a>
+            <div class="cart-count">{{order_number}}</div>
+            <div class="dateils-cart">
+              <div *ngIf="dataCart!== null">
+                <div class="all-products">
+                  <div class="product-cart" *ngFor="let product of dataCart">
+                    <img [src]="[product.img1]" alt="">
+                    <div>
+                      <p>{{product.name}}</p>
+                      <p>${{product.price}} <span style="color: red;">X</span> {{product.quantity}} </p>
+                    </div>
+                    <button (click)="delete(product.id)"><i class="fas fa-trash-alt"></i></button>
+                  </div>
+                </div>
+                <div class="total-price">
+                  <p>SUBTOTAL:</p>
+                  <p>${{Total_price}}</p>
+                </div>
+                <div class="total-shipping">
+                  <p>SHIPPING:</p>
+                  <p>Free</p>
+                </div>
+                <div class="total">
+                  <p>TOTAL::</p>
+                  <p>${{Total_price}}</p>
+                </div>
+                <div class="buttons">
+                  <a class="btn btn-primary " [routerLink]="['/cart']">View cart</a>
+                  <a class="btn btn-primary" [routerLink]="['/']">Checkout</a>
+                </div>
+              </div>
+              <div *ngIf="dataCart=== null" >
+                <div> No Order</div >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+   <div class="header-three" >
+    <div class="container">
+      <div class="row">
+        <div class="col-3 header-three-left ">
+          <nav class="navbar">
+            <div class="navbar-container container">
+                <input type="checkbox" name="" id="">
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <span class="text">Shop By Categories</span>
+                <ul class="menu-items">
+                    <li class="parent" >
+                      <a class="patarn nav-link dropdown-toggle" [routerLink]="['/']"  role="button" data-toggle="dropdown" aria-expanded="false">Laptops & Accessories</a>
+                      <div class="child ">
+                        <ul class="dropdown-menu">
+                          <li >
+                            <a class="patarn" [routerLink]="['/']">Laptops & Accessories</a>
+                          </li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="parent" >
+                      <a class="patarn nav-link dropdown-toggle" [routerLink]="['/']"  role="button" data-toggle="dropdown" aria-expanded="false">Laptops & Accessories</a>
+                      <div class="child ">
+                        <ul class="dropdown-menu">
+                          <li >
+                            <a class="patarn" [routerLink]="['/']">Laptops & Accessories</a>
+                          </li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="parent" >
+                      <a class="patarn nav-link dropdown-toggle" [routerLink]="['/']"  role="button" data-toggle="dropdown" aria-expanded="false">Laptops & Accessories</a>
+                      <div class="child ">
+                        <ul class="dropdown-menu">
+                          <li >
+                            <a class="patarn" [routerLink]="['/']">Laptops & Accessories</a>
+                          </li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="parent" >
+                      <a class="patarn nav-link dropdown-toggle" [routerLink]="['/']"  role="button" data-toggle="dropdown" aria-expanded="false">Laptops & Accessories</a>
+                      <div class="child ">
+                        <ul class="dropdown-menu">
+                          <li >
+                            <a class="patarn" [routerLink]="['/']">Laptops & Accessories</a>
+                          </li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                          <li><a [routerLink]="['/']">Electronics</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="catégories-parent" >
+                      <a class="patarn" [routerLink]="['/']"  >Laptops & Accessories</a>
+                    </li>
+
+                </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col-8 header-three-right">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/ordered">Orded</a>
+                </li>
+                <li class="nav-item dropdown" *ngIf="id_User !== 0">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    {{user[0].name}}
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item"  (click)="logout()">log out</a>
+                    <a class="dropdown-item" routerLink="/change_password">Chenge Password</a>
+
+                  </div>
+                </li>
+
+              </ul>
+              <form class="form-inline my-2 my-lg-0" method="get" [action]="['/search']">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search"  aria-label="Search">
+                <select name="catégories" id="catégories">
+                  <option value="All" selected>All catégories </option>
+                  <option value="Laptops">Laptops</option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Smart Watches">Smart Watches</option>
+                  <option value="Gaming Gear">Gaming Gear</option>
+                </select>
+                <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+              </form>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+   </div>
+   <div class="header-four fixed-top">
+      <div class="center-header-four">
+        <nav class="navbar">
+          <div class="navbar-container container">
+              <input type="checkbox" name="" id="">
+              <div class="hamburger-lines">
+                  <span class="line line1"></span>
+                  <span class="line line2"></span>
+                  <span class="line line3"></span>
+              </div>
+
+              <ul class="menu-items">
+                  <li class="parent" >
+                    <a class="patarn nav-link dropdown-toggle" [routerLink]="['/']"  role="button" data-toggle="dropdown" aria-expanded="false">Laptops & Accessories</a>
+                    <div class="child ">
+                      <ul class="dropdown-menu">
+                        <li >
+                          <a class="patarn" [routerLink]="['/']">Laptops & Accessories</a>
+                        </li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="parent" >
+                    <a class="patarn nav-link dropdown-toggle" [routerLink]="['/']"  role="button" data-toggle="dropdown" aria-expanded="false">Laptops & Accessories</a>
+                    <div class="child ">
+                      <ul class="dropdown-menu">
+                        <li >
+                          <a class="patarn" [routerLink]="['/']">Laptops & Accessories</a>
+                        </li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="parent" >
+                    <a class="patarn nav-link dropdown-toggle" [routerLink]="['/']"  role="button" data-toggle="dropdown" aria-expanded="false">Laptops & Accessories</a>
+                    <div class="child ">
+                      <ul class="dropdown-menu">
+                        <li >
+                          <a class="patarn" [routerLink]="['/']">Laptops & Accessories</a>
+                        </li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="parent" >
+                    <a class="patarn nav-link dropdown-toggle" [routerLink]="['/']"  role="button" data-toggle="dropdown" aria-expanded="false">Laptops & Accessories</a>
+                    <div class="child ">
+                      <ul class="dropdown-menu">
+                        <li >
+                          <a class="patarn" [routerLink]="['/']">Laptops & Accessories</a>
+                        </li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                        <li><a [routerLink]="['/']">Electronics</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="catégories-parent" >
+                    <a class="patarn" [routerLink]="['/']"  >Laptops & Accessories</a>
+                  </li>
+
+              </ul>
+          </div>
+        </nav>
+        <a [routerLink]="['/']" class="logo" >
+          <img class="logo img-fluid" src="../assets/img/logo-1.png" alt="">
+        </a>
+        <form class="form-inline my-2 my-lg-0" method="get" [action]="['/search']">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search"  aria-label="Search">
+          <select name="catégories" id="catégories">
+            <option value="All" selected>All catégories </option>
+            <option value="Laptops">Laptops</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Smart Watches">Smart Watches</option>
+            <option value="Gaming Gear">Gaming Gear</option>
+          </select>
+          <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="header-four-cart">
+          <div class="new-account "><a class="nav-link" [routerLink]="['/']"><i class="far fa-user"></i></a></div>
+          <div class="new-favorite"><a class="nav-link" [routerLink]="['/']"><i class="far fa-heart"></i></a></div>
+          <div class="cart" >
+            <a class="nav-link cart"  [routerLink]="['/cart']"><i class="zmdi zmdi-shopping-cart"></i></a>
+            <div class="cart-count">{{order_number}}</div>
+            <div class="dateils-cart">
+              <div *ngIf="dataCart!== null">
+                <div class="all-products">
+                  <div class="product-cart" *ngFor="let product of dataCart">
+                    <img [src]="[product.img1]" alt="">
+                    <div>
+                      <p>{{product.name}}</p>
+                      <p>${{product.price}} <span style="color: red;">X</span> {{product.quantity}} </p>
+                    </div>
+                    <button (click)="delete(product.id)"><i class="fas fa-trash-alt"></i></button>
+                  </div>
+                </div>
+                <div class="total-price">
+                  <p>SUBTOTAL:</p>
+                  <p>${{Total_price}}</p>
+                </div>
+                <div class="total-shipping">
+                  <p>SHIPPING:</p>
+                  <p>Free</p>
+                </div>
+                <div class="total">
+                  <p>TOTAL::</p>
+                  <p>${{Total_price}}</p>
+                </div>
+                <div class="buttons">
+                  <a class="btn btn-primary " [routerLink]="['/cart']">View cart</a>
+                  <a class="btn btn-primary" [routerLink]="['/']">Checkout</a>
+                </div>
+              </div>
+              <div *ngIf="dataCart=== null" >
+                <div> No Order</div >
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+   </div>
+   <div class="header-five fixed-bottom">
+      <div class="header-five-content">
+        <div class="icon-header-five ">
+          <a class="nav-link"  [routerLink]="['/']"><i class="fas fa-home"></i></a>
+          <p>Home</p>
+        </div>
+        <div class="icon-header-five ">
+          <a class="nav-link" (click)="search()"><i class="fas fa-search"></i></a>
+          <p>Search</p>
+        </div>
+        <div class="icon-header-five icon-cart ">
+          <a class="nav-link"  [routerLink]="['/cart']"><i class="fas fa-cart-plus"></i></a>
+          <p class="cart-number">{{order_number}}</p>
+          <p>Cart</p>
+        </div>
+        <div class="icon-header-five ">
+          <a class="nav-link"  [routerLink]="['/']"><i class="far fa-heart"></i></a>
+          <p>Wishlist</p>
+        </div>
+        <div class="icon-header-five ">
+          <a class="nav-link"  [routerLink]="['/']"><i class="far fa-user"></i></a>
+          <p>Account</p>
+        </div>
+      </div>
+   </div>
+   <div class="header-search fixed-top">
+    <form class="form-inline my-2 my-lg-0" method="get" [action]="['/search']">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search"  aria-label="Search">
+      <select name="catégories" id="catégories">
+        <option value="All" selected>All catégories </option>
+        <option value="Laptops">Laptops</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Smart Watches">Smart Watches</option>
+        <option value="Gaming Gear">Gaming Gear</option>
+      </select>
+      <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+   </div>
+
+</header>
+<div class="content-app">
+  <router-outlet></router-outlet>
+</div>

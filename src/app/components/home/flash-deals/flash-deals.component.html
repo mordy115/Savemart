@@ -1,0 +1,36 @@
+<div class="flash-deals">
+  <div class="row">
+    <div class="header-flash-deals col-12">
+      <h4>FLASH DEALS</h4>
+      <hr>
+      <div class="button-flash-deals">
+        <button class="carousel-control-next prev-icon" type="button" id="back"   >
+          <span class="carousel-control-prev-icon" ></span>
+        </button>
+        <button class="carousel-control-next next-icon" type="button"  id="next"  >
+          <span class="carousel-control-next-icon" ></span>
+        </button>
+      </div>
+    </div>
+    <div>
+      <div class="product">
+        <div class="product-image col-w40">
+          <a [routerLink]="['/product/'+ prodects_flash_deals[0].id]">
+            <img class=" img-fluid image-cover" [src]="[prodects_flash_deals[0].img1]" alt="">
+            <img class="img-fluid image-secondary" [src]="[prodects_flash_deals[0].img2]" alt="">
+          </a>
+        </div>
+        <div class="col-w60 text-center">
+          <p>{{prodects_flash_deals[0].name}}</p>
+          <p>{{prodects_flash_deals[0].title}}</p>
+          <p>${{prodects_flash_deals[0].price}}</p>
+        </div>
+        <div class="buttons">
+          <a routerLink="/" (click)="getprodect(prodects_flash_deals[0].id)"><i class="fas fa-cart-plus"></i></a>
+          <a routerLink="/"><i class="far fa-heart"></i></a>
+          <a (click)="search(prodects_flash_deals[0].name)"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

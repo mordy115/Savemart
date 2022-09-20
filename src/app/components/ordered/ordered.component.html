@@ -1,0 +1,6 @@
+<div *ngIf="id_User === 0" class="no-user text-center mt-3">
+     <a routerLink="/login">Please Sign in </a>
+</div>
+<div *ngIf="id_User !== 0" class=" text-center mt-3">
+  <p >{{user[0].id}}</p>
+</div>

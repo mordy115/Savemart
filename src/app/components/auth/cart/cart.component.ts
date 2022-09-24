@@ -57,7 +57,7 @@ export class CartComponent implements OnInit {
         }else{
           arr.push(this.dataCart[i].price * this.dataCart[i].quantity);
           localStorage.setItem('dataCart', JSON.stringify(this.dataCart));
-          location.reload()
+
         }
       }
        this.Total_price = arr.reduce((previousValue, currentValue) => previousValue + currentValue);

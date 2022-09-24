@@ -1,0 +1,22 @@
+.register-home{
+  margin-top: 80px;
+}
+
+.register-home .form-group{
+  display: flex;
+  justify-content: space-evenly;
+}
+.register-home.form-check-input{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.form-group button {
+   border-radius: 20px;
+   background-color: black;
+   color: #fff;
+   padding: 5px 20px ;
+}
+.form-group button:hover{
+  background-color: #2d9ae8;
+}

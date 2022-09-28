@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
       return el.email=== form.value.email
     })
 
-      if ( !(this.Registerform.controls['name'].errors && this.Registerform.controls['email'].errors && this.Registerform.controls['email'].errors)){
+      if ( !(this.Registerform.controls['name'].errors || this.Registerform.controls['email'].errors || this.Registerform.controls['email'].errors)){
         if(user.length === 0){
           this.Auth_login.postdate(form.value.name , form.value.email ,form.value.password).subscribe(
           (response)=>{
@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
           alert("this email registered")
         }
       }else{
-        alert("mordy")
+        alert("please fill form ")
       }
 
 

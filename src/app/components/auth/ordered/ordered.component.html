@@ -1,7 +1,26 @@
 <div *ngIf="id_User === 0" class="no-user text-center mt-3">
      <a routerLink="/login">Please Sign in </a>
-     <input type="text" [(ngModel)]="name">
 </div>
 <div *ngIf="id_User !== 0" class=" text-center mt-3">
-  <p >{{user[0].id}}</p>
+  <div *ngIf="order.length > 0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="prodect-order" *ngFor="let product of order" >
+            <img [src]="[product.img1]" [alt]="[product.name]">
+             <div>
+              <h5>{{product.name}}</h5>
+              <p>{{product.title}}</p>
+             </div>
+             <p>Total:{{product.price * product.quantity}}$</p>
+             <button (click)="delete(id_User,product.id)">delete order</button>
+          </div>
+        </div>
+
+      </div>
+     </div>
+  </div>
+  <div *ngIf="order.length === 0">
+     <p class="m-5 text-center">no order</p>
+  </div>
 </div>

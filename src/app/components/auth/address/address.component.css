@@ -1,0 +1,47 @@
+.address-form{
+  margin-top: 80px;
+}
+
+.address-form .form-group{
+  display: flex;
+  justify-content: space-evenly;
+}
+.address-form.form-check-input{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.form-group button {
+   border-radius: 20px;
+   background-color: black;
+   color: #fff;
+   padding: 5px 20px ;
+}
+.form-group button:hover{
+  background-color: #2d9ae8;
+}
+.address{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #eee;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.address button {
+  border: 0px;
+  font-size: 20px;
+}
+.address button:hover{
+  color: #2d9ae8;
+}
+.cart-page .btn.continue-shopping{
+  padding: 5px 15px;
+  background-color: #222;
+  border-radius: 20px;
+  color: #eee;
+}
+
+

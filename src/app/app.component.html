@@ -59,7 +59,7 @@
             <a class="nav-link cart"  [routerLink]="['/cart']"><i class="zmdi zmdi-shopping-cart"></i></a>
             <div class="cart-count">{{order_number}}</div>
             <div class="dateils-cart">
-              <div *ngIf="dataCart!== null">
+              <div *ngIf="dataCart.length !== 0 ">
                 <div class="all-products">
                   <div class="product-cart" *ngFor="let product of dataCart">
                     <img [src]="[product.img1]" alt="">
@@ -84,10 +84,10 @@
                 </div>
                 <div class="buttons">
                   <a class="btn btn-primary " [routerLink]="['/cart']">View cart</a>
-                  <a class="btn btn-primary" [routerLink]="['/']">Checkout</a>
+                  <a class="btn btn-primary" [routerLink]="['/address']">Checkout</a>
                 </div>
               </div>
-              <div *ngIf="dataCart=== null" >
+              <div *ngIf="dataCart.length=== 0" >
                 <div> No Order</div >
               </div>
             </div>
@@ -309,7 +309,7 @@
             <a class="nav-link cart"  [routerLink]="['/cart']"><i class="zmdi zmdi-shopping-cart"></i></a>
             <div class="cart-count">{{order_number}}</div>
             <div class="dateils-cart">
-              <div *ngIf="dataCart!== null">
+              <div *ngIf="dataCart.length !== 0">
                 <div class="all-products">
                   <div class="product-cart" *ngFor="let product of dataCart">
                     <img [src]="[product.img1]" alt="">
@@ -334,10 +334,10 @@
                 </div>
                 <div class="buttons">
                   <a class="btn btn-primary " [routerLink]="['/cart']">View cart</a>
-                  <a class="btn btn-primary" [routerLink]="['/']">Checkout</a>
+                  <a class="btn btn-primary" [routerLink]="['/address']">Checkout</a>
                 </div>
               </div>
-              <div *ngIf="dataCart=== null" >
+              <div *ngIf="dataCart.length === 0" >
                 <div> No Order</div >
               </div>
             </div>

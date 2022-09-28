@@ -10,6 +10,9 @@ import { SearchComponent } from './components/product/search/search.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { GuardchangePasswordService } from './Guards/Guard_changepassword/guardchange-password.service';
 import { GuardLoginService } from './Guards/Guard_login/guard-login.service';
+import { AddressComponent } from './components/auth/address/address.component';
+import { ConfirmOrderComponent } from './components/auth/confirm-order/confirm-order.component';
+import { EditAddressComponent } from './components/auth/address/edit-address/edit-address.component';
 
 const routes: Routes = [
   {path:'' ,component:HomeComponent},
@@ -20,7 +23,11 @@ const routes: Routes = [
   {path:'register' ,component:RegisterComponent , canActivate:[GuardLoginService]},
   {path:'change_password' ,component:ChangePasswordComponent,canActivate:[GuardchangePasswordService]},
   {path:'ordered' ,component:OrderedComponent},
+  {path:'address' ,component:AddressComponent,canActivate:[GuardchangePasswordService]},
+  {path:'confirmOrder' ,component:ConfirmOrderComponent,canActivate:[GuardchangePasswordService]},
+  {path:'editaddress/:id' ,component:EditAddressComponent,canActivate:[GuardchangePasswordService]},
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.dataCart !== null){
+    if(this.dataCart.length !== 0){
       let arr = []
       for(let i=0 ;i<this.dataCart.length ;i++){
          arr.push(this.dataCart[i].price * this.dataCart[i].quantity)
@@ -40,14 +40,15 @@ export class CartComponent implements OnInit {
     this.order_number-- ;
     localStorage.setItem('numberCart', JSON.stringify(this.order_number));
     if(this.order_number === 0){
-      localStorage.clear()
+      localStorage.setItem('dataCart',JSON.stringify([]));
+      localStorage.setItem('numberCart',JSON.stringify(0));
     }
     location.reload()
     }
 
   }
   total(){
-    if(this.dataCart !== null){
+    if(this.dataCart.length !== 0){
       let arr = []
       for(let i=0 ;i<this.dataCart.length ;i++){
 
@@ -65,8 +66,6 @@ export class CartComponent implements OnInit {
 
 
   }
-  confirmorder(){
-    localStorage.removeItem("confirmorder")
-  }
+
 
 }

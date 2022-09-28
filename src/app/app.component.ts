@@ -45,7 +45,7 @@ export class AppComponent {
     this.order_number = Number(localStorage.getItem('numberCart'));
     this.id_User = Number(localStorage.getItem('id_User'))?Number(localStorage.getItem('id_User')):0;
     console.log(this.id_User);
-    if(this.dataCart !== null){
+    if(this.dataCart.length !== 0){
       let arr = []
       for(let i=0 ;i<this.dataCart.length ;i++){
          arr.push(this.dataCart[i].price * this.dataCart[i].quantity)

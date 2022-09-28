@@ -1,0 +1,22 @@
+.address-form{
+  margin-top: 80px;
+}
+
+.address-form .form-group{
+  display: flex;
+  justify-content: space-evenly;
+}
+.address-form.form-check-input{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.form-group button {
+   border-radius: 20px;
+   background-color: black;
+   color: #fff;
+   padding: 5px 20px ;
+}
+.form-group button:hover{
+  background-color: #2d9ae8;
+}

@@ -14,7 +14,6 @@ export class AuthLoginService {
   getdate():Observable<any>{
     return this.http.get(this.baseURL)
   }
-
   postdate(name:string , email:string ,password:string):Observable<any>{
     return this.http.post(this.baseURL, {name:name, email: email , password:password}).pipe(catchError(this.handleError))
   }

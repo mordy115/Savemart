@@ -1,0 +1,24 @@
+.prodect-order{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #eee;
+  margin: 10px;
+  border-radius: 10px;
+}
+.prodect-order img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+.prodect-order button {
+  border: 0px;
+  background-color: rgb(49, 48, 48);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+.prodect-order button:hover{
+  color: red;
+}

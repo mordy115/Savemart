@@ -1,5 +1,5 @@
 <div class="container cart-page">
-  <div *ngIf="dataCart!== null" >
+  <div *ngIf="dataCart.length !== 0" >
     <div class="row">
       <div class="col-lg-9">
         <div class="prodect-order" *ngFor="let product of dataCart" >
@@ -22,13 +22,13 @@
              <li>Total Shipping: Free</li>
              <li>Total: ${{Total_price }} (tax incl.)</li>
           </ul>
-          <a class="btn checkout" routerLink="/cart" (click)="confirmorder()">Checkout</a>
+          <a class="btn checkout" routerLink="/address" >Checkout</a>
         </div>
       </div>
     </div>
 
   </div>
-  <div *ngIf="dataCart=== null" >
+  <div *ngIf="dataCart.length === 0" >
     <div> No Order</div >
   </div>
 

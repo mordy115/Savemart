@@ -25,6 +25,7 @@ export class AppComponent {
   constructor(
     private Auth_login:AuthLoginService,
   ){
+
   this.scroll()
   }
  scrollFunction() {
@@ -41,8 +42,8 @@ export class AppComponent {
     window.onscroll = ()=>{
       this.scrollFunction()
     };
-    this.dataCart = JSON.parse(`${localStorage.getItem('dataCart')}`)
-    this.order_number = Number(localStorage.getItem('numberCart'));
+    this.dataCart = JSON.parse(`${localStorage.getItem('dataCart')}`)?JSON.parse(`${localStorage.getItem('dataCart')}`):[];
+    this.order_number = Number(localStorage.getItem('numberCart')?localStorage.getItem('numberCart'):0);
     this.id_User = Number(localStorage.getItem('id_User'))?Number(localStorage.getItem('id_User')):0;
     console.log(this.id_User);
     if(this.dataCart.length !== 0){
@@ -64,6 +65,7 @@ export class AppComponent {
       console.log(error);
       }
      );
+
 
   }
   delete(id:number){
